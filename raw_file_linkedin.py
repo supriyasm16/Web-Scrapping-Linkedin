@@ -17,11 +17,11 @@ search = "pvc doors and windows and {country}".format(country=country)
 search = re.sub(' and ', ' AND ', search)
 search = search.split(' or ')
 # Pass username and passwords as args to the post_grabber function
-#grabber = post_grabber("keeplearningalways23@gmail.com", "Ireland@2023")
+#grabber = post_grabber("********@gmail.com", "***")
 a = input('Enter')
 bs_utils = buying_signal_utilities()
 util = raw_file_utilities()
-full_path = (r"C:\Users\HP\Desktop\Orcawise\social_media_data-linkedln-Orcawise_project\Orcawise_project\posts") 
+full_path = (r"C:\Users\HP\Desktop\social_media_data-linkedln\posts") 
 filenames = os.listdir(full_path)
 
 for search_term in tqdm(search, desc='Running Search'):
@@ -29,7 +29,7 @@ for search_term in tqdm(search, desc='Running Search'):
     wb = Workbook()
     ws1 = wb.active
     #grabber.run(search=search_term)
-    wb_filename= (r"C:\Users\HP\Desktop\Orcawise\social_media_data-linkedln-Orcawise_project\Orcawise_project\raw_files\raw_file_linkedin.xlsx")
+    wb_filename= (r"C:\Users\HP\Desktop\social_media_data-linkedln\raw_files\raw_file_linkedin.xlsx")
     #wb_filename = "raw_files/{search}.xlsx".format(search=re.sub(' AND ', '_', search_term))
     # Look in the 'xlsx_files' directory for the files generated from raw_file_linkedin.py
     filenames = os.listdir(full_path)
