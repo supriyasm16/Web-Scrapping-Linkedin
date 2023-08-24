@@ -17,7 +17,7 @@ wb_filename = "buying_signal_linkedin.xlsx"
 ws1.append(['Keyword', 'Url', 'Post Content', 'Comment', 'Authors_name', 'Buying_signal', 'Source']) #Header
 ws_row = 2 #Row and col indexing start at 1 instead of 0. Row 1 is header row.
 ws_col = 1
-current_wb = load_workbook(filename=r"C:\Users\HP\Desktop\Orcawise\social_media_data-linkedln-Orcawise_project\Orcawise_project\raw_files\raw_file_linkedin.xlsx")
+current_wb = load_workbook(filename=r"C:\Users\HP\Desktop\social_media_data-linkedln\raw_files\raw_file_linkedin.xlsx")
 wb_active = current_wb.active
 for row in tqdm(wb_active.iter_rows(min_row=2, min_col=1, max_row=wb_active.max_row, max_col=wb_active.max_column,values_only=True)):
     row = list(row)
