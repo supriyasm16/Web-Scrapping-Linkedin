@@ -1,18 +1,23 @@
-The Python script comprises two files: buying_signal.py and post_grabber_linkedin.py. These files collectively automate the process of logging into a LinkedIn account and searching for specific keywords within the knowledge graph, facilitating efficient data retrieval for targeted information.
+LinkedIn Scraper
 
-The script utilizes Selenium, a powerful automation tool, to simulate user interactions and automate the login process to a LinkedIn account. This ensures seamless access to LinkedIn's platform, enabling subsequent data extraction tasks.
+Code Structure and Overview:
 
-After successful authentication, the script proceeds to perform keyword searches within LinkedIn's knowledge graph. This feature enables users to specify relevant keywords or phrases, allowing the script to retrieve pertinent information related to those terms.
+This script facilitates scraping posts and comments from any LinkedIn profile using a search keyword. It consists of two main scripts: raw_file_linkedin.py and buying_signal_linkedin.py, offering ease of use.
 
-Upon identifying relevant posts or information within the knowledge graph, the script extracts and compiles the data for further analysis or processing. This streamlined approach saves time and effort by automating the tedious task of manual data extraction.
+Raw_file_linkedin.py:
 
+Utilizes Selenium WebDriver to automate LinkedIn connection and scrolling.
+Scrapes posts, placing them in the posts folder with individual text files containing raw HTML.
+Scrapes comments in the format: Post_url, Comment, Comment_author, Date_posted, LinkedIn_Post.
+For unscraped elements, Null is used, and comments are encapsulated in single quotes for compatibility with CSV parsers.
+Running Code:
 
+Step 1:
 
-Before executing the script, users need to ensure that appropriate configurations are set within the post_grabber_linkedin.py file. This may include specifying the LinkedIn account credentials, desired keywords for search, and any other relevant parameters.
+Pass your username and password to the post_grabber function in raw_file_linkedin.py.
+Modify the search variable with the desired boolean expression, ensuring proper spacing around boolean keywords.
+Execute the script to generate raw files for each search term in the raw_files folder, including raw_file_linkedin.xlsx for the next step.
+Step 2:
 
-To initiate the web scraping process, simply execute the post_grabber_linkedin.py script. The automation process will commence, sequentially logging into the LinkedIn account and performing keyword searches as per the specified criteria.
-
-The script generates output containing the extracted data, which can be further processed, analyzed, or stored as required. Users can customize the output format or destination based on their preferences and use case.
-
-
-
+Run buying_signal_linkedin.py, which automatically reads the raw file generated in the previous step.
+Output an xlsx file named buying_signal_linkedin.xlsx, containing all required information, serving as the final script output.
